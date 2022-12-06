@@ -10,10 +10,10 @@ is_solution(As) :-
 	all_distinct(As).
 solve(A, N, Xs) :-
 	length(W, N),
-	length(L, A),
 	append(_, W, L),
 	append(L, _, Xs),
-	is_solution(W).
+	is_solution(W),
+	length(L, A).
 solve(A, B) :-
 	phrase_from_file(inp(Xs), 'input'),
 	solve(A, 4, Xs),
